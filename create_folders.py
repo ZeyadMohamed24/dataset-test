@@ -1,10 +1,3 @@
-# import os
-
-# os.makedirs("data/raw",exist_ok=True)
-# print("Data directory created !")
-# os.makedirs("src",exist_ok=True)
-# print("Source directory created !")
-
 import os
 
 def create_dir(path):
