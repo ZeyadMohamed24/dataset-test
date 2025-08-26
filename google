@@ -1,0 +1,5 @@
+
+from googlesearch import search
+
+for url in search("Python programming", num_results=1, lang="en", region="us"):
+    print(url)

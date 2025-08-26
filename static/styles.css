@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.container.wide {
+    max-width: 95%;
+    padding: 20px;
+}
+
+.dropdown-form {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.dropdown-form select {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.dropdown-form label {
+    font-weight: bold;
+    color: #555;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.styled-table th,
+.styled-table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.styled-table th {
+    background-color: #007bff;
+    color: white;
+    width: 40%;
+    text-transform: capitalize;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.styled-table tr:hover {
+    background-color: #eaf3ff;
+}
+
+
+.full-width {
+    width: 100%;
+    font-size: 14px;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.full-width th,
+.full-width td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.full-width th {
+    background-color: #007bff;
+    color: white;
+    top: 0;
+}
+
+.full-width tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.full-width tr:hover {
+    background-color: #eaf3ff;
+}
+
+.no-data {
+    text-align: center;
+    font-style: italic;
+    color: #999;
+}

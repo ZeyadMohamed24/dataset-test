@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,4 +11,152 @@
     <button onclick="alert('Button clicked!')">Click Me</button>
 </body>
 
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Example</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container {% if records|length > 1 %}wide{% endif %}">
+        <h1>JSON Records</h1>
+
+        <form method="get" action="/" class="dropdown-form">
+            <label for="limit">Show:</label>
+            <select name="limit" id="limit" onchange="this.form.submit()">
+                <option value="1" {% if selected=='1' %}selected{% endif %}>1</option>
+                <option value="5" {% if selected=='5' %}selected{% endif %}>5</option>
+                <option value="10" {% if selected=='10' %}selected{% endif %}>10</option>
+                <option value="ALL" {% if selected=='ALL' %}selected{% endif %}>ALL</option>
+            </select>
+        </form>
+
+        {% if records %}
+        {% if records|length == 1 %}
+        <table class="styled-table">
+            <tbody>
+                {% for key, value in records[0].items() %}
+                <tr>
+                    <th>{{ key }}</th>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <table class="styled-table full-width">
+            <thead>
+                <tr>
+                    {% for key in records[0].keys() %}
+                    <th>{{ key }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                <tr>
+                    {% for value in record.values() %}
+                    <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        {% else %}
+        <p class="no-data">No data found.</p>
+        {% endif %}
+    </div>
+</body>
+
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            margin-top: 20px;
+            padding: 0;
+            list-style: none;
+        }
+        li {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="/">
+            <input type="text" name="query" placeholder="Enter search term..." required />
+            <button type="submit">Search Google</button>
+        </form>
+
+        {% if results %}
+        <ul>
+            {% for url in results %}
+            <li><a href="{{ url }}" target="_blank">{{ url }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
 </html>
+
